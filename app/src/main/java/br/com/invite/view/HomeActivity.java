@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import br.com.invite.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -13,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toast.makeText(HomeActivity.this, "Cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(HomeActivity.this, "Bem vindo!", Toast.LENGTH_SHORT).show();
 
 
     }
