@@ -14,7 +14,7 @@
         android:layout_height="350dp"
         android:layout_margin="20dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/img_carregamento_convite" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/tv_informativo"
