@@ -37,13 +37,6 @@ public class UsuarioControler {
 
 
 
-
-    public UsuarioControler(String nome, String senha, String email){
-        this.nome = nome;
-        this.senha = senha;
-        this.email = email;
-    }
-
     public void inserir(String nome,String email,String senha){
 
         Usuario usuario = new Usuario(nome,email,senha);

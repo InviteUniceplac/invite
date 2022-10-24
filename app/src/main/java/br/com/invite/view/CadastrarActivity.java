@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,16 +52,20 @@ public class CadastrarActivity extends AppCompatActivity {
                 EditText txtEmail = findViewById(R.id.idEmail);
 
                 String nome = txtName.getText().toString();
-                String senha = txtSenha.getText().toString();
                 String email = txtEmail.getText().toString();
+                String senha = txtSenha.getText().toString();
+
+                if(nome.equals("") || email.equals("") || senha.equals("")){
+                    Toast.makeText(CadastrarActivity.this, "Todos os campos devems ser preenchido", Toast.LENGTH_SHORT).show();
+                }else{
 
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            UsuarioControler controler = new UsuarioControler(nome, email, senha);
-                            controler.inserir(nome, email, senha);
+                            UsuarioControler controler = new UsuarioControler();
+                            controler.inserir(nome,email,senha);
                             Intent intent = new Intent(CadastrarActivity.this, HomeActivity.class);
                             startActivity(intent);
                             finish();
@@ -76,17 +81,30 @@ public class CadastrarActivity extends AppCompatActivity {
                             } catch (FirebaseAuthInvalidCredentialsException e) {
                                 erro = "Digite um email válido";
                             } catch (Exception e) {
-                                e.printStackTrace();
-                                erro = e.toString();
+
+                                erro = "Erro ao cadastrar usuário";
                             }
                             Toast.makeText(CadastrarActivity.this, erro, Toast.LENGTH_SHORT).show();
 
                         }
                     }
                 });
+                }
+            }
+        });
+
+        TextView login = findViewById(R.id.idLogin);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent(CadastrarActivity.this, LoginActivity.class);
+                startActivity(login);
+                finish();
+
             }
         });
     }
+
 }
 
 

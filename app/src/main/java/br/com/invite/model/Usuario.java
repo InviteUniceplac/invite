@@ -9,13 +9,13 @@ import java.util.Date;
 
 public class Usuario {
     public String nome;
-    public String senha;
     public String email;
+    public String senha;
 
-    public Usuario(String nome, String senha, String email){
+    public Usuario(String nome, String email, String senha){
         this.nome = nome;
-        this.senha = senha;
         this.email = email;
+        this.senha = senha;
 
     }
 
