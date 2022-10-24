@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,5 +14,17 @@
         android:layout_height="350dp"
         android:layout_margin="20dp"
         android:scaleType="centerCrop"
-        android:src="@color/white" />
+        app:srcCompat="@drawable/img_carregamento_convite" />
+
+    <TextView
+        android:id="@+id/tv_informativo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="@string/informativo_gera_convite"
+        android:textAlignment="center"
+        android:textAppearance="@style/Theme.Invite"
+        android:textColor="#770DFE"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 </LinearLayout>

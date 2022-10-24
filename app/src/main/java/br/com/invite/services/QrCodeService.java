@@ -21,6 +21,10 @@ public class QrCodeService extends Service {
         Glide.with(context).load(gerarQrCode("teste", 400)).into(imagemView);
     }
 
+    public void mostrarQrCode(Context context, ImageView imagemView, int tamanho) {
+        Glide.with(context).load(gerarQrCode("teste", tamanho)).into(imagemView);
+    }
+
     public String gerarQrCode(String data, Integer tamanho) {
         tamanho = (tamanho == null ? 200 : tamanho);
 

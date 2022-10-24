@@ -15,18 +15,15 @@
         android:theme="@style/Theme.Invite"
         tools:targetApi="31">
 
+        <!-- SERVICES -->
         <service
             android:name=".services.QrCodeService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity
-            android:name=".view.LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <!-- ACTIVITIES -->
+
+        <!-- HOME -->
         <activity
             android:name=".view.HomeActivity"
             android:exported="false">
@@ -38,13 +35,8 @@
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.EventosActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
+        <!-- CADASTRO -->
         <activity
             android:name=".view.CadastrarActivity"
             android:exported="true">
@@ -54,6 +46,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- LOGIN -->
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!-- EVENTOS -->
+        <activity
+            android:name=".view.EventosActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!-- GERAR CONVITE -->
         <activity
             android:name=".view.GerarConviteActivity"
             android:exported="false">

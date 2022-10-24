@@ -1,6 +1,7 @@
 package br.com.invite.view;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +15,23 @@ public class GerarConviteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gerar_convite);
+    }
 
-        // Só pra testar se o qr-code está sendo gerado, excluir depois
-        _qrCodeService.mostrarQrCode(this, findViewById(R.id.iv_qrCode));
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        mostrarQrCode();
+    }
+
+    public void mostrarQrCode() {
         // Gerar o qr-code com os dados do CONVITE
-//        _qrCodeService.gerarQrCode(new Convite(new Evento(), new Usuario()).getSerialId().toString(), null);
+//      _qrCodeService.gerarQrCode(new Convite(new Evento(), new Usuario()).getSerialId().toString(), null);
+
+        TextView informativo = findViewById(R.id.tv_informativo);
+
+        _qrCodeService.mostrarQrCode(getBaseContext(), findViewById(R.id.iv_qrCode));
+
+        informativo.setText(R.string.sucesso_gera_convite);
     }
 }
