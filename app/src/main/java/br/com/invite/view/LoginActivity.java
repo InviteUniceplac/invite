@@ -1,8 +1,5 @@
 package br.com.invite.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,17 +8,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import br.com.invite.R;
-import br.com.invite.controller.convite.UsuarioControler;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
 
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -57,10 +54,9 @@ public class LoginActivity extends AppCompatActivity {
 
                             } catch (FirebaseAuthWeakPasswordException e) {
                                 erro = "A senha deve ter no mínimo 6 caracteres";
-                            }  catch (FirebaseAuthInvalidCredentialsException e) {
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
                                 erro = "Digite um email válido";
-                            }
-                            catch (Exception e) {
+                            } catch (Exception e) {
 
                                 erro = "Email ou senha inválidos";
                             }
@@ -70,13 +66,11 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
 
-
-            });
-        }
-
+                });
+            }
 
 
-    });
+        });
 
         TextView cadastrar = findViewById(R.id.cadastrarId);
         cadastrar.setOnClickListener(new View.OnClickListener() {

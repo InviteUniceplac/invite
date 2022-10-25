@@ -2,14 +2,21 @@
 <resources>
     <string name="app_name">Invite</string>
 
+    <!-- FUNCIONALIDADES -->
     <string name="login">Login</string>
     <string name="cadastro">Cadastro</string>
-
     <string name="qr_code">QR-Code</string>
+
+    <!--  -->
     <string name="inserir_cpf">Insira seu CPF</string>
     <string name="gerar_qrcode">Gerar QR-Code</string>
+
+    <!-- INFORMATIVOS -->
     <string name="informativo_gera_convite">Gerando convite</string>
     <string name="sucesso_gera_convite">Convite gerado</string>
-
     <string name="carregamento">Loading</string>
+
+    <!-- DESCRIÇÕES -->
+    <string name="descricao_logo">Logo</string>
+    <string name="descricao_fab_add">ADD</string>
 </resources>

@@ -1,4 +1,4 @@
-package br.com.invite.controller.convite;
+package br.com.invite.controller;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,9 +29,9 @@ public class EventoController {
         this.descricao = descricao;
     }
 
-    public void criarEvento(){
+    public void criarEvento() {
 
-        Evento evento = new Evento(local, nomeEvento,data, patrocinador, inicioEvento,fimEvento,descricao);
+        Evento evento = new Evento(local, nomeEvento, data, patrocinador, inicioEvento, fimEvento, descricao);
 
         reference.child(nomeEvento).setValue(evento);
 

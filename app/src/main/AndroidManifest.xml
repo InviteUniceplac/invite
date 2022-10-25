@@ -21,6 +21,11 @@
             android:enabled="true"
             android:exported="true" />
 
+        <service
+            android:name=".services.ConviteService"
+            android:enabled="true"
+            android:exported="true" />
+
         <!-- ACTIVITIES -->
 
         <!-- HOME -->
@@ -68,6 +73,15 @@
         <!-- GERAR CONVITE -->
         <activity
             android:name=".view.GerarConviteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!-- COMPROVANTE -->
+        <activity
+            android:name=".view.ComprovanteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
