@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".view.HomeActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="180dp"
+        android:layout_height="137dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="266dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

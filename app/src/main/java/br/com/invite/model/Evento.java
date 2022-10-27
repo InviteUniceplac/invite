@@ -8,18 +8,19 @@ public class Evento {
     private String nomeEvento;
     private Date data;
     private String patrocinador;
-    private Date inicioEvento;
-    private Date fimEvento;
     private String descricao;
 
-    public Evento(String local, String nomeEvento, Date data, String patrocinador, Date inicioEvento, Date fimEvento, String descricao) {
+
+    public Evento(String local, String nomeEvento, Date data, String patrocinador,String descricao) {
         this.local = local;
         this.nomeEvento = nomeEvento;
         this.data = data;
         this.patrocinador = patrocinador;
-        this.inicioEvento = inicioEvento;
-        this.fimEvento = fimEvento;
         this.descricao = descricao;
+
+    }
+
+    public Evento(String local, String nomeEvento, Date date, Date horarioInicial, Date horarioFinal, String patrocinador, String descricao) {
     }
 
     public String getLocal() {
@@ -52,22 +53,6 @@ public class Evento {
 
     public void setPatrocinador(String patrocinador) {
         this.patrocinador = patrocinador;
-    }
-
-    public Date getInicioEvento() {
-        return inicioEvento;
-    }
-
-    public void setInicioEvento(Date inicioEvento) {
-        this.inicioEvento = inicioEvento;
-    }
-
-    public Date getFimEvento() {
-        return fimEvento;
-    }
-
-    public void setFimEvento(Date fimEvento) {
-        this.fimEvento = fimEvento;
     }
 
     public String getDescricao() {

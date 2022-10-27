@@ -66,7 +66,7 @@ public class CadastrarActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             UsuarioControler controler = new UsuarioControler();
                             controler.inserir(nome,email,senha);
-                            Intent intent = new Intent(CadastrarActivity.this, HomeActivity.class);
+                            Intent intent = new Intent(CadastrarActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         } else {

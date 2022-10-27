@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CadastrarEventoActivity">
+
+    <EditText
+        android:id="@+id/idEvento"
+        android:layout_width="379dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="Digite o nome do Evento:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idLocal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idLocal"
+        android:layout_width="179dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="Digite o local:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idHorario"
+        app:layout_constraintEnd_toStartOf="@+id/idData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idEvento" />
+
+    <EditText
+        android:id="@+id/idPatrocinador"
+        android:layout_width="380dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
+        android:ems="10"
+        android:hint="Nome do patrocinador:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idDescricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/idData"
+        android:layout_width="180dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="155dp"
+        android:ems="10"
+        android:hint="Data:"
+        android:inputType="date"
+        android:maxLength="10"
+        app:layout_constraintBottom_toTopOf="@+id/idPatrocinador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idLocal"
+        app:layout_constraintTop_toBottomOf="@+id/idEvento"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <Button
+        android:id="@+id/idEnviar"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="100dp"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDescricao" />
+
+    <EditText
+        android:id="@+id/idDescricao"
+        android:layout_width="383dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Digite a descrição do evento..."
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/idEnviar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/idHorario"
+        android:layout_width="173dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="Horário:"
+        android:inputType="time"
+        android:maxLength="5"
+        app:layout_constraintBottom_toTopOf="@+id/idPatrocinador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idLocal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
