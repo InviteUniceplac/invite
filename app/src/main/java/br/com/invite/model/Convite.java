@@ -1,6 +1,8 @@
 package br.com.invite.model;
 
-public class Convite {
+import java.io.Serializable;
+
+public class Convite implements Serializable {
     private Evento evento;
     private Usuario usuario;
 

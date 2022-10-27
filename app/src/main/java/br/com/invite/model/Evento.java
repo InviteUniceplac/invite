@@ -1,9 +1,10 @@
 package br.com.invite.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evento {
+public class Evento implements Serializable {
     private String local;
     private String nomeEvento;
     private Date data;
