@@ -32,6 +32,6 @@ public class GerarConviteActivity extends AppCompatActivity {
 
         _qrCodeService.mostrarQrCode(getBaseContext(), findViewById(R.id.iv_qrCode));
 
-        informativo.setText(R.string.sucesso_gera_convite);
+        informativo.setText(R.string.inf_sucesso_gera_convite);
     }
 }

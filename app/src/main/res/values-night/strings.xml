@@ -4,6 +4,8 @@
 
     <!-- FUNCIONALIDADES -->
     <string name="login">Login</string>
+    <string name="convite">Convite</string>
+    <string name="comprovante">Comprovante de participação</string>
     <string name="cadastro">Cadastro</string>
     <string name="qr_code">QR-Code</string>
 
@@ -12,9 +14,11 @@
     <string name="gerar_qrcode">Gerar QR-Code</string>
 
     <!-- INFORMATIVOS -->
-    <string name="informativo_gera_convite">Gerando convite</string>
-    <string name="sucesso_gera_convite">Convite gerado</string>
-    <string name="carregamento">Loading</string>
+    <string name="inf_gera_convite">Gerando convite</string>
+    <string name="inf_sucesso_gera_convite">Convite gerado</string>
+    <string name="inf_carregamento">Loading</string>
+    <string name="inf_download_convite">Download do convite em PDF</string>
+    <string name="inf_download_comprovante">Download do comprovante em PDF</string>
 
     <!-- DESCRIÇÕES -->
     <string name="descricao_logo">Logo</string>

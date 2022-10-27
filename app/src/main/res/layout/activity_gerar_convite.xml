@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:text="@string/informativo_gera_convite"
+        android:text="@string/inf_gera_convite"
         android:textAlignment="center"
         android:textAppearance="@style/Theme.Invite"
         android:textColor="#770DFE"
