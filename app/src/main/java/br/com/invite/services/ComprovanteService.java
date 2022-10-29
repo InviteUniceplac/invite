@@ -61,7 +61,7 @@ public class ComprovanteService extends Service {
         title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         title.setColor(ContextCompat.getColor(getBaseContext(), R.color.black));
         title.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText(convite.getUsuario().nome.toUpperCase() + " fez a sua inscrição para o evento: " + convite.getEvento().getNomeEvento() + ", que ocorrerá das " + convite.getEvento().getInicioEvento() + " às " + convite.getEvento().getFimEvento() + " horas, no local: " + convite.getEvento().getLocal(), 396, 560, title);
+        //canvas.drawText(convite.getUsuario().nome.toUpperCase() + " fez a sua inscrição para o evento: " + convite.getEvento().getNomeEvento() + ", que ocorrerá das " + convite.getEvento().getInicioEvento() + " às " + convite.getEvento().getFimEvento() + " horas, no local: " + convite.getEvento().getLocal(), 396, 560, title);
 
         pdf.finishPage(pagina);
 

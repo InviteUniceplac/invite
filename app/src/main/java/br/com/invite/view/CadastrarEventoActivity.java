@@ -11,15 +11,11 @@ import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.chrono.ChronoLocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.Date;
-import java.util.SimpleTimeZone;
+
 
 import br.com.invite.R;
-import br.com.invite.controller.convite.EventoController;
+import br.com.invite.controller.EventoController;
 
 public class CadastrarEventoActivity extends AppCompatActivity {
 

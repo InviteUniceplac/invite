@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.invite.view.HomeActivity"
+    >
 
-    <item android:id="@+id/menu"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="menu"
-        app:showAsAction="ifRoom"
-        />
-    <item android:id="@+id/comprovante"
-        android:title="comprovante"
-        app:showAsAction="never"
-        />
-    <item android:id="@+id/perfil"
-        android:title="perfil"
-        app:showAsAction="never"
-        />
-    <item android:id="@+id/logout"
-        android:title="logout"
-        app:showAsAction="never"
-        />
 
+    <item android:title="Item"
+        app:showAsAction="always"/>
 
 </menu>

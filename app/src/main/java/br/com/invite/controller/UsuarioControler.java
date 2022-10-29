@@ -1,7 +1,13 @@
 package br.com.invite.controller;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
@@ -17,6 +23,7 @@ public class UsuarioControler {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference reference = database.getReference();
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
 
     public void inserir(String nome, String email, String senha) {
@@ -26,6 +33,10 @@ public class UsuarioControler {
 
     }
 
+
+    public void logout(){
+        FirebaseAuth.getInstance().signOut();
+    }
 
 }
 

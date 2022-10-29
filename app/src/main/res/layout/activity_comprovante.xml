@@ -43,11 +43,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
-<<<<<<< HEAD
         android:id="@+id/cv_convite"
-=======
-        android:id="@+id/rl_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_margin="20dp"
@@ -62,11 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appbar">
 
         <ImageView
-<<<<<<< HEAD
             android:id="@+id/iv_img_convite"
-=======
-            android:id="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_alignParentStart="true"
@@ -83,11 +75,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-<<<<<<< HEAD
             android:layout_toEndOf="@+id/iv_img_convite"
-=======
-            android:layout_toEndOf="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
             android:fontFamily="@font/inter"
             android:text="@string/comprovante"
             android:textColor="#000"
@@ -99,11 +87,7 @@
             android:id="@+id/tv_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:layout_below="@+id/iv_img_convite"
-=======
-            android:layout_below="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
             android:layout_marginStart="8dp"
             android:layout_marginBottom="3dp"
             android:textColor="@color/black"
@@ -150,11 +134,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="118dp"
             android:scaleType="centerCrop"
-<<<<<<< HEAD
             app:srcCompat="@drawable/logo" />
-=======
-            app:srcCompat="@drawable/comprovante" />
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
         <TextView
             android:id="@+id/tv_informativo_download"

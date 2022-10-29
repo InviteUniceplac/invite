@@ -3,13 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-=======
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
     <application
         android:allowBackup="true"
@@ -21,20 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Invite"
         tools:targetApi="31">
-<<<<<<< HEAD
-<<<<<<< HEAD
+        <activity
+            android:name=".view.PerfilActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".view.CadastrarEventoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-=======
-=======
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
-
-        <!-- SERVICES -->
+        </activity> <!-- SERVICES -->
         <service
             android:name=".services.QrCodeService"
             android:enabled="true"
@@ -46,31 +41,8 @@
         <service
             android:name=".services.ComprovanteService"
             android:enabled="true"
-<<<<<<< HEAD
-            android:exported="true"/>
-
-        <!-- ACTIVITIES -->
-
+            android:exported="true" /> <!-- ACTIVITIES -->
         <!-- HOME -->
->>>>>>> c63fd9c75ae315e881af4973aae6db2997de822c
-        <activity
-            android:name=".view.LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-<<<<<<< HEAD
-=======
-            android:exported="true" />
-        <service
-            android:name=".services.PermissaoService"
-            android:enabled="true"
-            android:exported="true" />
-
-        <!-- ACTIVITIES -->
-        <!-- HOME -->
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         <activity
             android:name=".view.HomeActivity"
             android:exported="false">
@@ -81,66 +53,41 @@
             <intent-filter>
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
-        </activity>
-<<<<<<< HEAD
-=======
-
-        <!-- CADASTRO -->
->>>>>>> c63fd9c75ae315e881af4973aae6db2997de822c
-=======
-
-        <!-- CADASTRO -->
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
+        </activity> <!-- CADASTRO -->
         <activity
             android:name=".view.CadastrarActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <category android:name="android.intent.category.ACCESSIBILITY_SHORTCUT_TARGET" />
+            </intent-filter>
+        </activity> <!-- LOGIN -->
+        <activity
+            android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- LOGIN -->
-        <activity
-            android:name=".view.LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <!-- EVENTOS -->
+        </activity> <!-- EVENTOS -->
         <activity
             android:name=".view.EventosActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- GERAR CONVITE -->
+        </activity> <!-- GERAR CONVITE -->
         <activity
             android:name=".view.GerarConviteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-<<<<<<< HEAD
-=======
-        <!-- CONVITE -->
-        <activity
-            android:name=".view.ConviteActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
-        <!-- COMPROVANTE -->
+        </activity> <!-- COMPROVANTE -->
         <activity
             android:name=".view.ComprovanteActivity"
             android:exported="false">
