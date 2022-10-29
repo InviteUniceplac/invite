@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+=======
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
     <application
         android:allowBackup="true"
@@ -17,6 +22,7 @@
         android:theme="@style/Theme.Invite"
         tools:targetApi="31">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity
             android:name=".view.CadastrarEventoActivity"
             android:exported="false">
@@ -25,6 +31,8 @@
                 android:value="" />
         </activity>
 =======
+=======
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
         <!-- SERVICES -->
         <service
@@ -38,6 +46,7 @@
         <service
             android:name=".services.ComprovanteService"
             android:enabled="true"
+<<<<<<< HEAD
             android:exported="true"/>
 
         <!-- ACTIVITIES -->
@@ -52,6 +61,16 @@
                 android:value="" />
         </activity>
 <<<<<<< HEAD
+=======
+            android:exported="true" />
+        <service
+            android:name=".services.PermissaoService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- ACTIVITIES -->
+        <!-- HOME -->
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         <activity
             android:name=".view.HomeActivity"
             android:exported="false">
@@ -63,10 +82,15 @@
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 =======
 
         <!-- CADASTRO -->
 >>>>>>> c63fd9c75ae315e881af4973aae6db2997de822c
+=======
+
+        <!-- CADASTRO -->
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         <activity
             android:name=".view.CadastrarActivity"
             android:exported="true">
@@ -104,6 +128,18 @@
                 android:value="" />
         </activity>
 
+<<<<<<< HEAD
+=======
+        <!-- CONVITE -->
+        <activity
+            android:name=".view.ConviteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         <!-- COMPROVANTE -->
         <activity
             android:name=".view.ComprovanteActivity"

@@ -7,6 +7,7 @@ import android.os.IBinder;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+<<<<<<< HEAD
 import java.util.Date;
 
 import br.com.invite.model.Evento;
@@ -16,6 +17,12 @@ public class ConviteService extends Service {
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private final DatabaseReference eventosRef = database.getReference("Eventos");
     private final DatabaseReference usuariosRef = database.getReference("Usuarios");
+=======
+import br.com.invite.model.Convite;
+
+public class ConviteService extends Service {
+    private final DatabaseReference conviteReference = FirebaseDatabase.getInstance().getReference("Convites");
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -23,6 +30,7 @@ public class ConviteService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
+<<<<<<< HEAD
     public void gerarConvite(Evento evento, String email) {
         usuariosRef.child(email);
 
@@ -51,5 +59,9 @@ public class ConviteService extends Service {
         String senha = referenceUser.child(usuarioUID).child("senha").toString();
 
         return new Usuario(nome, email, senha);
+=======
+    public void gerarConvite(Convite convite) {
+        conviteReference.setValue(convite);
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
     }
 }

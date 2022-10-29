@@ -27,12 +27,18 @@ public class EventoController {
 <<<<<<< HEAD:app/src/main/java/br/com/invite/controller/convite/EventoController.java
     }
 
+<<<<<<< HEAD
     public void adicionarEvento(String local, String nomeEvento, Date date, String patrocinador, String descricao) {
 =======
     public void criarEvento() {
 
         Evento evento = new Evento(local, nomeEvento, data, patrocinador, inicioEvento, fimEvento, descricao);
 >>>>>>> c63fd9c75ae315e881af4973aae6db2997de822c:app/src/main/java/br/com/invite/controller/EventoController.java
+=======
+    public void criarEvento() {
+
+        Evento evento = new Evento(local, nomeEvento, data, patrocinador, inicioEvento, fimEvento, descricao);
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
         Evento evento = new Evento(local,nomeEvento,date,patrocinador,descricao);
         reference.child(nomeEvento).setValue(evento);

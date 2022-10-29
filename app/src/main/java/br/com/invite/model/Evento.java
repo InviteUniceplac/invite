@@ -1,17 +1,25 @@
 package br.com.invite.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evento {
+public class Evento implements Serializable {
     private String local;
     private String nomeEvento;
     private Date data;
     private String patrocinador;
     private String descricao;
 
+<<<<<<< HEAD
 
     public Evento(String local, String nomeEvento, Date data, String patrocinador,String descricao) {
+=======
+    public Evento() {
+    }
+
+    public Evento(String local, String nomeEvento, Date data, String patrocinador, Date inicioEvento, Date fimEvento, String descricao) {
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
         this.local = local;
         this.nomeEvento = nomeEvento;
         this.data = data;

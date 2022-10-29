@@ -23,4 +23,8 @@
     <!-- DESCRIÇÕES -->
     <string name="descricao_logo">Logo</string>
     <string name="descricao_fab_add">ADD</string>
+<<<<<<< HEAD
+=======
+    <string name="inf_erro_gera_convite">Problema ao tentar gerar o Qr-Code</string>
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 </resources>

@@ -43,11 +43,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
-<<<<<<< HEAD
-        android:id="@+id/cv_convite"
-=======
-        android:id="@+id/rl_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
+        android:id="@+id/rl_convite"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_margin="20dp"
@@ -62,18 +58,17 @@
         app:layout_constraintTop_toBottomOf="@+id/appbar">
 
         <ImageView
-<<<<<<< HEAD
-            android:id="@+id/iv_img_convite"
-=======
-            android:id="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/iv_ic_convite"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:contentDescription="@string/descricao_logo"
-            app:srcCompat="@drawable/comprovante" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:id="@+id/tv_funcionalidade"
@@ -82,16 +77,12 @@
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
-<<<<<<< HEAD
-            android:layout_toEndOf="@+id/iv_img_convite"
-=======
-            android:layout_toEndOf="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
+            android:layout_marginTop="25dp"
+            android:layout_toEndOf="@+id/iv_ic_convite"
             android:fontFamily="@font/inter"
-            android:text="@string/comprovante"
+            android:text="@string/convite"
             android:textColor="#000"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_anchorGravity="top|center" />
 
@@ -99,11 +90,7 @@
             android:id="@+id/tv_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_below="@+id/iv_img_convite"
-=======
-            android:layout_below="@+id/iv_ic_comprovante"
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
+            android:layout_below="@+id/iv_ic_convite"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="3dp"
             android:textColor="@color/black"
@@ -140,7 +127,7 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:id="@+id/iv_certificado"
+            android:id="@+id/iv_convite"
             android:layout_width="135dp"
             android:layout_height="135dp"
             android:layout_below="@+id/tv_local"
@@ -150,21 +137,17 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="118dp"
             android:scaleType="centerCrop"
-<<<<<<< HEAD
             app:srcCompat="@drawable/logo" />
-=======
-            app:srcCompat="@drawable/comprovante" />
->>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
         <TextView
             android:id="@+id/tv_informativo_download"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_certificado"
+            android:layout_below="@+id/iv_convite"
             android:layout_alignParentStart="true"
             android:layout_marginStart="98dp"
             android:layout_marginTop="26dp"
-            android:text="@string/inf_download_comprovante"
+            android:text="@string/inf_download_convite"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -172,7 +155,7 @@
             android:id="@+id/iv_download"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/iv_certificado"
+            android:layout_below="@+id/iv_convite"
             android:layout_marginStart="10dp"
             android:layout_marginTop="36dp"
             android:layout_toEndOf="@+id/tv_informativo_download"

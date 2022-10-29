@@ -51,12 +51,17 @@ public class CadastrarActivity extends AppCompatActivity {
                 if (nome.equals("") || email.equals("") || senha.equals("")) {
                     Toast.makeText(CadastrarActivity.this, "Todos os campos devems ser preenchido", Toast.LENGTH_SHORT).show();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 }else{
+=======
+                } else {
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
+<<<<<<< HEAD
                         if (task.isSuccessful()) {
                             UsuarioControler controler = new UsuarioControler();
                             controler.inserir(nome,email,senha);
@@ -67,17 +72,33 @@ public class CadastrarActivity extends AppCompatActivity {
                             String erro;
                             try {
                                 throw task.getException();
+=======
+                            if (task.isSuccessful()) {
+                                UsuarioControler controler = new UsuarioControler();
+                                controler.inserir(nome, email, senha);
+                                Intent intent = new Intent(CadastrarActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                String erro;
+                                try {
+                                    throw task.getException();
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
 
-                            } catch (FirebaseAuthWeakPasswordException e) {
-                                erro = "A senha deve ter no mínimo 6 caracteres";
-                            } catch (FirebaseAuthUserCollisionException e) {
-                                erro = "Email já cadastrado";
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                erro = "Digite um email válido";
-                            } catch (Exception e) {
+                                } catch (FirebaseAuthWeakPasswordException e) {
+                                    erro = "A senha deve ter no mínimo 6 caracteres";
+                                } catch (FirebaseAuthUserCollisionException e) {
+                                    erro = "Email já cadastrado";
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    erro = "Digite um email válido";
+                                } catch (Exception e) {
 
-                                erro = "Erro ao cadastrar usuário";
+                                    erro = "Erro ao cadastrar usuário";
+                                }
+                                Toast.makeText(CadastrarActivity.this, erro, Toast.LENGTH_SHORT).show();
+
                             }
+<<<<<<< HEAD
                             Toast.makeText(CadastrarActivity.this, erro, Toast.LENGTH_SHORT).show();
 =======
                 } else {
@@ -111,6 +132,8 @@ public class CadastrarActivity extends AppCompatActivity {
 >>>>>>> c63fd9c75ae315e881af4973aae6db2997de822c
 
                             }
+=======
+>>>>>>> afc5f0c61b138bf6fecf2160382f3e97e9f8f493
                         }
                     });
                 }
