@@ -30,9 +30,12 @@
             android:name=".services.ComprovanteService"
             android:enabled="true"
             android:exported="true" />
+        <service
+            android:name=".services.PermissaoService"
+            android:enabled="true"
+            android:exported="true" />
 
         <!-- ACTIVITIES -->
-
         <!-- HOME -->
         <activity
             android:name=".view.HomeActivity"
@@ -102,4 +105,5 @@
                 android:value="" />
         </activity>
     </application>
+
 </manifest>

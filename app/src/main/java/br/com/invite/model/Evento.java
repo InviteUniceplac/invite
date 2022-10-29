@@ -13,6 +13,9 @@ public class Evento implements Serializable {
     private Date fimEvento;
     private String descricao;
 
+    public Evento() {
+    }
+
     public Evento(String local, String nomeEvento, Date data, String patrocinador, Date inicioEvento, Date fimEvento, String descricao) {
         this.local = local;
         this.nomeEvento = nomeEvento;

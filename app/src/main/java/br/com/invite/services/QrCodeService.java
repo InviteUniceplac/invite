@@ -36,7 +36,7 @@ public class QrCodeService extends Service {
     }
 
     public String gerarQrCode(String data, Integer tamanho) {
-        tamanho = (tamanho == null ? 1080 : tamanho);
+        tamanho = (tamanho == null ? 200 : tamanho);
 
         String dimensoes = "chs=" + tamanho + "x" + tamanho;
         String tipo = "&cht=qr";

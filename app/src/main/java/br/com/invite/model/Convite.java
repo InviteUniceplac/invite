@@ -6,6 +6,9 @@ public class Convite implements Serializable {
     private Evento evento;
     private Usuario usuario;
 
+    public Convite() {
+    }
+
     public Convite(Evento evento, Usuario usuario) {
         this.evento = evento;
         this.usuario = usuario;
