@@ -22,6 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.UUID;
 
 import br.com.invite.R;
 import br.com.invite.model.Convite;
@@ -29,10 +33,13 @@ import br.com.invite.model.Convite;
 public class ConviteService extends Service {
     private final DatabaseReference conviteReference = FirebaseDatabase.getInstance().getReference("Convites");
 
+    private final DateFormat formatadorData = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+    private final DateFormat formatadorHora = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
+
     int pageHeight = 1120;
     int pageWidth = 792;
 
-    Bitmap bmp, scaledBmp;
+    Bitmap logo, escalaLogo;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -41,43 +48,46 @@ public class ConviteService extends Service {
     }
 
     public void gerarConvite(Convite convite) {
-        conviteReference.setValue(convite);
+        conviteReference.child(UUID.randomUUID().toString()).setValue(convite);
     }
 
     public void gerarPdfConvite(Convite convite, Context context, Resources resources) {
-        bmp = BitmapFactory.decodeResource(resources, R.drawable.logo);
-        scaledBmp = Bitmap.createScaledBitmap(bmp, 140, 140, false);
+        logo = BitmapFactory.decodeResource(resources, R.drawable.logo);
+        escalaLogo = Bitmap.createScaledBitmap(logo, 140, 140, false);
 
         PdfDocument pdf = new PdfDocument();
 
         Paint paint = new Paint();
         Paint title = new Paint();
 
-        PdfDocument.PageInfo comprovante = new PdfDocument.PageInfo.Builder(pageWidth, pageHeight, 1).create();
+        PdfDocument.PageInfo convitePdf = new PdfDocument.PageInfo.Builder(pageWidth, pageHeight, 1).create();
 
-        PdfDocument.Page pagina = pdf.startPage(comprovante);
+        PdfDocument.Page pagina = pdf.startPage(convitePdf);
 
         Canvas canvas = pagina.getCanvas();
 
-        canvas.drawBitmap(scaledBmp, 56, 40, paint);
+        canvas.drawBitmap(escalaLogo, 56, 40, paint);
 
         title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-
-        title.setTextSize(32);
-
+        title.setTextSize(60);
         title.setColor(ContextCompat.getColor(context, R.color.purple_200));
-
-        canvas.drawText("Invite", 209, 100, title);
+        canvas.drawText("Invite", 210, 160, title);
 
         title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        title.setTextSize(30);
         title.setColor(ContextCompat.getColor(context, R.color.black));
         title.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText(convite.getUsuario().nome.toUpperCase() + " fez a sua inscrição para o evento: " + convite.getEvento().getNomeEvento() + ", que ocorrerá das " + convite.getEvento().getInicioEvento() + " às " + convite.getEvento().getFimEvento() + " horas, no local: " + convite.getEvento().getLocal(), 396, 560, title);
+        canvas.drawText(
+                convite.getUsuario().nome.toUpperCase() + " fez a sua inscrição para o evento: \n\n"
+                        + convite.getEvento().getNomeEvento() + ", que ocorrerá no dia \n\n"
+                        + formatadorData.format(convite.getEvento().getData()) + " às \n\n"
+                        + formatadorHora.format(convite.getEvento().getData()) + " horas, no local: \n\n"
+                        + convite.getEvento().getLocal(), 396, 560, title);
 
         pdf.finishPage(pagina);
 
         try {
-            File file = new File(Environment.getExternalStorageDirectory(), convite.getEvento().getNomeEvento() + "_" + convite.getUsuario().getNome() + ".pdf");
+            File file = new File(Environment.getExternalStorageDirectory(), "/Documents/convite" + convite.getEvento().getNomeEvento() + "_" + convite.getUsuario().getNome() + ".pdf");
 
             pdf.writeTo(new FileOutputStream(file));
             Toast.makeText(context, "Convite gerado com sucesso.", Toast.LENGTH_SHORT).show();

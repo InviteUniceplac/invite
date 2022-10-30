@@ -19,14 +19,6 @@ public class QrCodeService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void mostrarQrCode(Context context, ImageView imagemView) {
-        Glide.with(context).load(gerarQrCode("teste", null)).into(imagemView);
-    }
-
-    public void mostrarQrCode(Context context, ImageView imagemView, int tamanho) {
-        Glide.with(context).load(gerarQrCode("teste", tamanho)).into(imagemView);
-    }
-
     public void mostrarQrCode(Convite convite, Context context, ImageView imagemView) {
         Glide.with(context).load(gerarQrCode(convite.toString(), null)).into(imagemView);
     }

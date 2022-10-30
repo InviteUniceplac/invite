@@ -5,9 +5,10 @@
     <!-- FUNCIONALIDADES -->
     <string name="login">Login</string>
     <string name="convite">Convite</string>
-    <string name="comprovante">Comprovante de participação</string>
+    <string name="comprovante_participacao">Comprovante de participação</string>
     <string name="cadastro">Cadastro</string>
     <string name="qr_code">QR-Code</string>
+    <string name="comprovante">Comprovante</string>
 
     <!--  -->
     <string name="inserir_cpf">Insira seu CPF</string>

@@ -161,4 +161,11 @@
             android:layout_toEndOf="@+id/tv_informativo_download"
             app:srcCompat="@drawable/download" />
     </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/convite_menu_inferior" />
 </androidx.constraintlayout.widget.ConstraintLayout>
