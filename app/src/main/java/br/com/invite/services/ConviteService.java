@@ -47,8 +47,11 @@ public class ConviteService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void gerarConvite(Convite convite) {
-        conviteReference.child(UUID.randomUUID().toString()).setValue(convite);
+    public String gerarConvite(Convite convite) {
+        String uuid = UUID.randomUUID().toString();
+        conviteReference.child(uuid).setValue(convite);
+
+        return uuid;
     }
 
     public void gerarPdfConvite(Convite convite, Context context, Resources resources) {

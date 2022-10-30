@@ -56,7 +56,7 @@ public class ConviteActivity extends AppCompatActivity {
         tv_horario.setText(String.format("Horário: %s", formatadorHora.format(convite.getEvento().getData())));
         tv_local.setText(String.format("Local: %s", convite.getEvento().getLocal()));
 
-        _qrCodeService.mostrarQrCode((Convite) _dados.getSerializable("CONVITE"), this, qrCode, 450);
+        _qrCodeService.mostrarQrCode(_dados.getString("CONVITE_BANCO"), this, qrCode, 450);
     }
 
     private void preparaBotaoDownload() {

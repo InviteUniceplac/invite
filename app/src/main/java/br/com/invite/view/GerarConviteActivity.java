@@ -72,7 +72,7 @@ public class GerarConviteActivity extends AppCompatActivity {
         convite = new Convite((Evento) _dados.getSerializable("EVENTO"), (Usuario) _dados.getSerializable("USUARIO"));
 
         // Persistir convite
-        _conviteService.gerarConvite(convite);
+        _dados.putString("CONVITE_BANCO", _conviteService.gerarConvite(convite));
 
         if (Objects.nonNull(convite)) {
             mostrarMensagem("SUCESSO");
