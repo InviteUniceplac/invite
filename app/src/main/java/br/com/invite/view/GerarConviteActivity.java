@@ -40,7 +40,7 @@ public class GerarConviteActivity extends AppCompatActivity {
 
         receberUsuarioFirebase();
 
-        evento = new Evento("Local", "NomeEvento", new Date(), "Patrocinador", new Date(), new Date(), "Descricao");
+        evento = new Evento("Local", "NomeEvento", new Date(), "Patrocinador", "Descricao");
     }
 
     public void receberUsuarioFirebase() {

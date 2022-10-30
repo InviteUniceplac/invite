@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/comprovante"
+        android:enabled="true"
+        android:icon="@drawable/logo"
+        android:title="Comprovantes" />
+    <item
+        android:id="@+id/perfil"
+        android:enabled="true"
+        android:title="Perfil" />
+    <item
+        android:id="@+id/logout"
+        android:enabled="true"
+        android:title="Logout" />
+</menu>

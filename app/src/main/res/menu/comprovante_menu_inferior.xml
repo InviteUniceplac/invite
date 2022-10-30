@@ -4,10 +4,10 @@
         android:id="@+id/item1"
         android:enabled="true"
         android:icon="@drawable/logo"
-        android:title="@string/app_name"/>
+        android:title="@string/app_name" />
     <item
         android:id="@+id/item2"
         android:enabled="true"
         android:icon="@drawable/comprovante"
-        android:title="@string/convite"/>
+        android:title="@string/convite" />
 </menu>

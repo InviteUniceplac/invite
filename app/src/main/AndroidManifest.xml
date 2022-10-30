@@ -47,7 +47,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
             <intent-filter>
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
@@ -56,7 +55,15 @@
         <!-- CADASTRO -->
         <activity
             android:name=".view.CadastrarActivity"
+            android:exported="true" />
+
+        <!-- LOGIN -->
+        <activity
+            android:name=".view.LoginActivity"
             android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,18 +71,18 @@
             </intent-filter>
         </activity>
 
-        <!-- LOGIN -->
+        <!-- EVENTOS -->
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.EventosActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
 
-        <!-- EVENTOS -->
+        <!-- PERFIL -->
         <activity
-            android:name=".view.EventosActivity"
+            android:name=".view.PerfilActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

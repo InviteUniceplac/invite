@@ -1,5 +1,6 @@
 package br.com.invite.controller;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -9,14 +10,12 @@ import br.com.invite.model.Usuario;
 
 
 public class UsuarioControler {
-
-    boolean verificar;
     private String nome;
     private String senha;
     private String email;
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference reference = database.getReference();
+    private DatabaseReference reference = database.getReference("Usuarios");
 
 
     public void inserir(String nome, String email, String senha) {
@@ -26,6 +25,8 @@ public class UsuarioControler {
 
     }
 
-
+    public void logout() {
+        FirebaseAuth.getInstance().signOut();
+    }
 }
 

@@ -8,8 +8,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
-import br.com.invite.model.Convite;
-
 public class QrCodeService extends Service {
     private final String dominio = "https://chart.googleapis.com/chart?";
 

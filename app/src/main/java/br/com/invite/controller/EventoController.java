@@ -19,20 +19,18 @@ public class EventoController {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference reference = database.getReference("Eventos");
 
-    public EventoController(String local, String nomeEvento, Date data, String patrocinador, Date inicioEvento, Date fimEvento, String descricao) {
+    public EventoController(String local, String nomeEvento, Date data, String patrocinador, String descricao) {
         this.local = local;
         this.nomeEvento = nomeEvento;
         this.data = data;
         this.patrocinador = patrocinador;
-        this.inicioEvento = inicioEvento;
-        this.fimEvento = fimEvento;
         this.descricao = descricao;
     }
 
-    public void criarEvento() {
 
-        Evento evento = new Evento(local, nomeEvento, data, patrocinador, inicioEvento, fimEvento, descricao);
+    public void criarEvento(String local, String nomeEvento, Date data, String patrocinador, String descricao) {
 
+        Evento evento = new Evento(local, nomeEvento, data, patrocinador, descricao);
         reference.child(nomeEvento).setValue(evento);
 
     }
