@@ -32,14 +32,13 @@ import br.com.invite.model.Convite;
 
 public class ConviteService extends Service {
     private final DatabaseReference conviteReference = FirebaseDatabase.getInstance().getReference("Convites");
-
     private final DateFormat formatadorData = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-    private final DateFormat formatadorHora = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
-
-    int pageHeight = 1120;
-    int pageWidth = 792;
+    private final DateFormat formatadorHora = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
 
     Bitmap logo, escalaLogo;
+
+    // QR-Code no PDF
+//    Bitmap qrCode, escalaQrCode;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -58,14 +57,16 @@ public class ConviteService extends Service {
         logo = BitmapFactory.decodeResource(resources, R.drawable.logo);
         escalaLogo = Bitmap.createScaledBitmap(logo, 140, 140, false);
 
+        // QR-Code no PDF
+//        qrCode = BitmapFactory.decodeResource(resources, R.drawable.comprovante);
+//        escalaQrCode = Bitmap.createScaledBitmap(qrCode, 500, 500, false);
+
         PdfDocument pdf = new PdfDocument();
+        PdfDocument.PageInfo convitePdf = new PdfDocument.PageInfo.Builder(792, 1120, 1).create();
+        PdfDocument.Page pagina = pdf.startPage(convitePdf);
 
         Paint paint = new Paint();
         Paint title = new Paint();
-
-        PdfDocument.PageInfo convitePdf = new PdfDocument.PageInfo.Builder(pageWidth, pageHeight, 1).create();
-
-        PdfDocument.Page pagina = pdf.startPage(convitePdf);
 
         Canvas canvas = pagina.getCanvas();
 
@@ -80,12 +81,13 @@ public class ConviteService extends Service {
         title.setTextSize(30);
         title.setColor(ContextCompat.getColor(context, R.color.black));
         title.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText(
-                convite.getUsuario().nome.toUpperCase() + " fez a sua inscrição para o evento: \n\n"
-                        + convite.getEvento().getNomeEvento() + ", que ocorrerá no dia \n\n"
-                        + formatadorData.format(convite.getEvento().getData()) + " às \n\n"
-                        + formatadorHora.format(convite.getEvento().getData()) + " horas, no local: \n\n"
-                        + convite.getEvento().getLocal(), 396, 560, title);
+        canvas.drawText("O convidado " + convite.getUsuario().nome.toUpperCase() + " fez sua inscrição para", 396, 400, title);
+        canvas.drawText("o evento " + convite.getEvento().getNomeEvento() + ", que ocorrerá no dia ", 396, 440, title);
+        canvas.drawText(formatadorData.format(convite.getEvento().getData()) + " às " + formatadorHora.format(convite.getEvento().getData()) + " horas", 396, 480, title);
+        canvas.drawText("no local: " + convite.getEvento().getLocal(), 396, 520, title);
+
+        // QR-Code no PDF
+//        canvas.drawBitmap(escalaQrCode, 146, 400, paint);
 
         pdf.finishPage(pagina);
 
