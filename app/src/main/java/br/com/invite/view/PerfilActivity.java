@@ -1,6 +1,9 @@
 package br.com.invite.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +49,8 @@ public class PerfilActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
                 Toast.makeText(PerfilActivity.this, "Erro ao recuperar usuário", Toast.LENGTH_SHORT).show();
-
+                Intent retorno = new Intent(PerfilActivity.this, HomeActivity.class);
+                startActivity(retorno);
             }
         });
 

@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/idDescricao"
-        android:layout_width="361dp"
-        android:layout_height="154dp"
+        android:layout_width="356dp"
+        android:layout_height="88dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
@@ -24,12 +24,12 @@
 
     <EditText
         android:id="@+id/idData"
-        android:layout_width="154dp"
-        android:layout_height="50dp"
+        android:layout_width="155dp"
+        android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="23dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Data:"
         android:inputType="textPersonName"
@@ -40,12 +40,12 @@
 
     <EditText
         android:id="@+id/idHora"
-        android:layout_width="157dp"
-        android:layout_height="53dp"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
         android:layout_marginStart="23dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Hora"
         android:inputType="textPersonName"
@@ -53,12 +53,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/idData"
         app:layout_constraintTop_toBottomOf="@+id/idLocal"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintVertical_bias="0.459" />
 
     <EditText
         android:id="@+id/idLocal"
-        android:layout_width="359dp"
-        android:layout_height="52dp"
+        android:layout_width="363dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="22dp"
@@ -73,8 +73,8 @@
 
     <EditText
         android:id="@+id/idNomeEvento"
-        android:layout_width="354dp"
-        android:layout_height="58dp"
+        android:layout_width="362dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="22dp"
@@ -84,16 +84,16 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/idLocal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/idPatrocinador"
-        android:layout_width="355dp"
-        android:layout_height="54dp"
+        android:layout_width="357dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
@@ -106,8 +106,8 @@
 
     <Button
         android:id="@+id/idEnviarEvento"
-        android:layout_width="125dp"
-        android:layout_height="51dp"
+        android:layout_width="141dp"
+        android:layout_height="56dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="146dp"

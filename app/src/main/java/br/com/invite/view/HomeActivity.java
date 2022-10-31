@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.comprovante_menu_inferior, menu);
+        inflater.inflate(R.menu.menu_home, menu);
 
         return true;
     }
@@ -85,6 +86,12 @@ public class HomeActivity extends AppCompatActivity {
 
     private void preparaBotoesMenuInferior() {
         View eventosBtn = findViewById(R.id.btn_eventos);
+        if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")) {
+            eventosBtn.setVisibility(View.VISIBLE);
+        } else {
+            eventosBtn.setVisibility(View.GONE);
+        }
+
         View perfilBtn = findViewById(R.id.btn_perfil);
         View logoutBtn = findViewById(R.id.btn_logout);
 

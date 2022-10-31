@@ -8,11 +8,13 @@
     <item
         android:id="@+id/btn_perfil"
         android:enabled="true"
-        android:src="@drawable/ic_baseline_person_24"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:src="@drawable/ic_baseline_add_24"
         android:title="Perfil" />
     <item
         android:id="@+id/btn_logout"
         android:enabled="true"
+        android:icon="@drawable/common_full_open_on_phone"
         android:src="@drawable/logo"
         android:title="Logout" />
 </menu>
