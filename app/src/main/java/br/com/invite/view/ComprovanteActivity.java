@@ -66,8 +66,8 @@ public class ComprovanteActivity extends AppCompatActivity {
     }
 
     private void preparaBotoesMenuInferior() {
-        View homeBtn = findViewById(R.id.item1);
-        View conviteBtn = findViewById(R.id.item2);
+        View homeBtn = findViewById(R.id.btn_invite);
+        View conviteBtn = findViewById(R.id.btn_convite);
 
         homeBtn.setOnClickListener(view -> {
             Intent intent = new Intent(ComprovanteActivity.this, HomeActivity.class);

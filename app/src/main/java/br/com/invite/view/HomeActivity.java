@@ -25,7 +25,6 @@ import br.com.invite.model.Evento;
 import br.com.invite.model.MyAdapter;
 
 public class HomeActivity extends AppCompatActivity {
-
     private RecyclerView recyclerView;
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -47,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        preparaBotoesMenuInferior();
+
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -60,57 +61,18 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-
-
                     Evento evento = dataSnapshot.getValue(Evento.class);
                     list.add(evento);
-
-
                 }
-
                 adapter.notifyDataSetChanged();
             }
 
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
-
-        View btEvento = findViewById(R.id.btEvento);
-        btEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(HomeActivity.this, EventosActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        View btPerfil = findViewById(R.id.btPerfil);
-        btPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, PerfilActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        View btLogout = findViewById(R.id.btLogout);
-        btLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent logout = new Intent(HomeActivity.this, LoginActivity.class);
-                UsuarioControler controler = new UsuarioControler();
-                controler.logout();
-                startActivity(logout);
-                finish();
-            }
-        });
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,5 +83,28 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    private void preparaBotoesMenuInferior() {
+        View eventosBtn = findViewById(R.id.btn_eventos);
+        View perfilBtn = findViewById(R.id.btn_perfil);
+        View logoutBtn = findViewById(R.id.btn_logout);
 
+        eventosBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, EventosActivity.class);
+            startActivity(intent);
+        });
+
+        perfilBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, PerfilActivity.class);
+            startActivity(intent);
+        });
+
+        logoutBtn.setOnClickListener(view -> {
+            Intent logout = new Intent(HomeActivity.this, LoginActivity.class);
+            UsuarioControler controler = new UsuarioControler();
+            controler.logout();
+
+            startActivity(logout);
+            finish();
+        });
+    }
 }
