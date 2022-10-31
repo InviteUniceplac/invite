@@ -43,33 +43,38 @@ public class LoginActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
 
+                if (email.equals("") || senha.equals("")) {
+                    Toast.makeText(LoginActivity.this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show();
+                } else {
 
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (task.isSuccessful()) {
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            String erro;
-                            try {
-                                throw task.getException();
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                erro = "Digite um email válido";
-                            } catch (Exception e) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                String erro;
+                                try {
+                                    throw task.getException();
 
-                                erro = "Email ou senha inválidos";
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    erro = "Digite um email válido";
+                                } catch (Exception e) {
+
+                                    erro = "Email ou senha inválidos";
+                                }
+                                Toast.makeText(LoginActivity.this, erro, Toast.LENGTH_SHORT).show();
+
                             }
-                            Toast.makeText(LoginActivity.this, erro, Toast.LENGTH_SHORT).show();
-
                         }
-                    }
 
-                });
+                    });
 
+                }
             }
         });
 
@@ -82,7 +87,5 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 }

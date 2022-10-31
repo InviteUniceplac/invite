@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btEvento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.604"
         app:tint="@android:color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -32,7 +32,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="43dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="60dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_add_24"
         android:tint="@color/white"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btEvento"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.562"
         app:rippleColor="@color/white"
         app:tint="@android:color/white" />
 
@@ -79,5 +79,4 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

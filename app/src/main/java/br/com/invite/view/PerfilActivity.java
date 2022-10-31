@@ -35,7 +35,6 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
                 Usuario usuario = snapshot.getValue(Usuario.class);
 
                 txtNome.setText(usuario.getNome());

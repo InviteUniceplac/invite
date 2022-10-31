@@ -9,14 +9,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import br.com.invite.R;
 import br.com.invite.controller.EventoController;
 
 public class EventosActivity extends AppCompatActivity {
+
+    private final DateFormat formatadorData = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+    private final DateFormat formatadorHora = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,28 +48,22 @@ public class EventosActivity extends AppCompatActivity {
                 String descricao = descricaotxt.getText().toString();
                 String horario = horariotxt.getText().toString();
 
-                String dataHora = data + horario;
-
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 'as' HH:mm");
 
-
                 try {
-
-                    Date date = formatter.parse(dataHora);
-
-                    Toast.makeText(EventosActivity.this, "A data é" + date, Toast.LENGTH_SHORT).show();
-
+                    Date date = formatter.parse(data + " as " + horario);
                     EventoController controler = new EventoController(local, nomeEvento, date, patrocinador, descricao);
                     controler.criarEvento(local, nomeEvento, date, patrocinador, descricao);
 
-                    Intent voltaHome = new Intent(EventosActivity.this, HomeActivity.class);
-                    startActivity(voltaHome);
-                    finish();
-
                 } catch (ParseException e) {
                     e.printStackTrace();
-                    Toast.makeText(EventosActivity.this, "Erro na exercução: " + e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EventosActivity.this, "Algo deu errado durante a criação do evento!", Toast.LENGTH_SHORT).show();
                 }
+
+
+                Intent voltaHome = new Intent(EventosActivity.this, HomeActivity.class);
+                startActivity(voltaHome);
+                finish();
 
 
             }

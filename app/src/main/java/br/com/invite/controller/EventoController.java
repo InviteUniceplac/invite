@@ -30,8 +30,8 @@ public class EventoController {
 
     public void criarEvento(String local, String nomeEvento, Date data, String patrocinador, String descricao) {
 
-        Evento evento = new Evento(local, nomeEvento, data, patrocinador, descricao);
-        reference.child(nomeEvento).setValue(evento);
+         Evento evento = new Evento(local, nomeEvento, data, patrocinador, descricao);
+         reference.child(nomeEvento).setValue(evento);
 
     }
 

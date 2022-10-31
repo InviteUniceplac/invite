@@ -65,7 +65,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
                     Evento evento = dataSnapshot.getValue(Evento.class);
-
                     list.add(evento);
 
 
@@ -115,7 +114,8 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent in = new Intent(HomeActivity.this, GerarConviteActivity.class);
+                startActivity(in);
             }
         });
 
