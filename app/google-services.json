@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "286740235338",
+    "project_id": "invite-1f9ea",
+    "storage_bucket": "invite-1f9ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286740235338:android:1221e3fed091b3e3a052b3",
+        "android_client_info": {
+          "package_name": "br.com.invite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286740235338-r4122jo9gbllasm5uca9qgtnobnocv0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZCcUSPC2ig1fB3TpbC5K5VluaweEh7oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286740235338-r4122jo9gbllasm5uca9qgtnobnocv0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

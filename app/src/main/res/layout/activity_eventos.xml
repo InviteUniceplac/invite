@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.EventosActivity">
+
+    <EditText
+        android:id="@+id/idDescricao"
+        android:layout_width="356dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="181dp"
+        android:ems="10"
+        android:hint="Descrição..."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idPatrocinador" />
+
+    <EditText
+        android:id="@+id/idData"
+        android:layout_width="155dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Data:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idPatrocinador"
+        app:layout_constraintEnd_toStartOf="@+id/idHora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idLocal" />
+
+    <EditText
+        android:id="@+id/idHora"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Hora"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idPatrocinador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idData"
+        app:layout_constraintTop_toBottomOf="@+id/idLocal"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <EditText
+        android:id="@+id/idLocal"
+        android:layout_width="363dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="26dp"
+        android:ems="10"
+        android:hint="Local:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idNomeEvento" />
+
+    <EditText
+        android:id="@+id/idNomeEvento"
+        android:layout_width="362dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Nome do Evento:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idLocal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idPatrocinador"
+        android:layout_width="357dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Patrocinador"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/idDescricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idData" />
+
+    <Button
+        android:id="@+id/idEnviarEvento"
+        android:layout_width="141dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="73dp"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDescricao" />
+</androidx.constraintlayout.widget.ConstraintLayout>
