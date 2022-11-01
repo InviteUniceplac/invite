@@ -85,11 +85,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void preparaBotoesMenuInferior() {
+
         View eventosBtn = findViewById(R.id.btn_eventos);
-        if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")) {
+        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")){
+
             eventosBtn.setVisibility(View.VISIBLE);
-        } else {
+
+        }else{
+
             eventosBtn.setVisibility(View.GONE);
+
         }
 
         View perfilBtn = findViewById(R.id.btn_perfil);
@@ -113,5 +118,6 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(logout);
             finish();
         });
+
     }
 }

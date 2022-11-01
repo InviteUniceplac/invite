@@ -1,13 +1,17 @@
 package br.com.invite.model;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import br.com.invite.R;
+import br.com.invite.view.GerarConviteActivity;
+import br.com.invite.view.HomeActivity;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
@@ -22,8 +28,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     ArrayList<Evento> mList;
     Context context;
 
-    public MyAdapter(Context context, ArrayList<Evento> mList) {
-        this.mList = mList;
+    public MyAdapter(Context context, ArrayList<Evento> mList){
+        this.mList =  mList;
         this.context = context;
 
     }
@@ -56,12 +62,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return mList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView local, nomeEvento, data, patrocinador, descricao;
+        Button btGerar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
 
 
             local = itemView.findViewById(R.id.local_text);
@@ -70,8 +78,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             patrocinador = itemView.findViewById(R.id.patrocidador_text);
             descricao = itemView.findViewById(R.id.descricao_text);
 
+            itemView.findViewById(R.id.btGerarComprovante).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent in = new Intent(context, GerarConviteActivity.class);
+                    itemView.getContext().startActivity(in);
+
+                }
+            });
+
         }
 
 
     }
 }
+
+
+
+
