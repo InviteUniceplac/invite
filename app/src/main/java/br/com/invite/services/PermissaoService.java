@@ -5,10 +5,10 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import android.app.Activity;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
-import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -22,17 +22,14 @@ public class PermissaoService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public void verificaPermissoes(Activity activity) {
-        if (isPermitido()) {
-            Toast.makeText(activity, "Permissão concedida", Toast.LENGTH_SHORT).show();
-        } else {
+    public void verificaPermissoes(Activity activity, Context context) {
+        if (!isPermitido(context))
             requisitarPermissao(activity);
-        }
     }
 
-    private boolean isPermitido() {
-        int escritaPermissao = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
-        int leituraPermissao = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+    public boolean isPermitido(Context context) {
+        int escritaPermissao = ContextCompat.checkSelfPermission(context, WRITE_EXTERNAL_STORAGE);
+        int leituraPermissao = ContextCompat.checkSelfPermission(context, READ_EXTERNAL_STORAGE);
         return escritaPermissao == PackageManager.PERMISSION_GRANTED && leituraPermissao == PackageManager.PERMISSION_GRANTED;
     }
 

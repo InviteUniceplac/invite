@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/iv_qrCode"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_margin="20dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/logo" />
@@ -25,6 +25,6 @@
         android:textAlignment="center"
         android:textAppearance="@style/Theme.Invite"
         android:textColor="#770DFE"
-        android:textSize="48sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
 </LinearLayout>

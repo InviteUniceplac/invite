@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import br.com.invite.R;
 
@@ -27,6 +26,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            Intent home = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(home);
+            finish();
+        }
 
         Button button = findViewById(R.id.logarId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -39,37 +43,39 @@ public class LoginActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
 
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                if (email.equals("") || senha.equals("")) {
+                    Toast.makeText(LoginActivity.this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show();
+                } else {
 
-                        if (task.isSuccessful()) {
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            String erro;
-                            try {
-                                throw task.getException();
 
-                            } catch (FirebaseAuthWeakPasswordException e) {
-                                erro = "A senha deve ter no mínimo 6 caracteres";
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                erro = "Digite um email válido";
-                            } catch (Exception e) {
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                erro = "Email ou senha inválidos";
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                String erro;
+                                try {
+                                    throw task.getException();
+
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    erro = "Digite um email válido";
+                                } catch (Exception e) {
+
+                                    erro = "Email ou senha inválidos";
+                                }
+                                Toast.makeText(LoginActivity.this, erro, Toast.LENGTH_SHORT).show();
+
                             }
-                            Toast.makeText(LoginActivity.this, erro, Toast.LENGTH_SHORT).show();
-
                         }
-                    }
 
+                    });
 
-                });
+                }
             }
-
-
         });
 
         TextView cadastrar = findViewById(R.id.cadastrarId);
@@ -81,7 +87,5 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
-
 }

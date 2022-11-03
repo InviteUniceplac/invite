@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Invite"
@@ -43,7 +47,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
             <intent-filter>
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
@@ -52,7 +55,15 @@
         <!-- CADASTRO -->
         <activity
             android:name=".view.CadastrarActivity"
+            android:exported="true" />
+
+        <!-- LOGIN -->
+        <activity
+            android:name=".view.LoginActivity"
             android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,18 +71,18 @@
             </intent-filter>
         </activity>
 
-        <!-- LOGIN -->
+        <!-- EVENTOS -->
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.EventosActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
 
-        <!-- EVENTOS -->
+        <!-- PERFIL -->
         <activity
-            android:name=".view.EventosActivity"
+            android:name=".view.PerfilActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -105,5 +116,4 @@
                 android:value="" />
         </activity>
     </application>
-
 </manifest>
