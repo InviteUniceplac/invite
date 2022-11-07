@@ -2,7 +2,6 @@ package br.com.invite.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import br.com.invite.R;
+import br.com.invite.controller.UsuarioControler;
 import br.com.invite.model.Usuario;
 
 public class PerfilActivity extends AppCompatActivity {
@@ -31,8 +31,37 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        TextView txtNome = findViewById(R.id.idRetornoNome);
-        TextView txtEmail = findViewById(R.id.idRetornoEmail);
+        TextView txtNome = findViewById(R.id.idEmailFinal);
+        TextView txtEmail = findViewById(R.id.idEmailInicial);
+
+        Button trocarEmail = findViewById(R.id.btnTrocarEmail);
+        trocarEmail.setOnClickListener(view ->{
+
+            Intent email = new Intent(PerfilActivity.this, TrocarEmailActivity.class);
+            startActivity(email);
+
+
+        });
+
+        Button trocarSenha = findViewById(R.id.btnTrocarSenha);
+        trocarSenha.setOnClickListener(view -> {
+
+            Intent in = new Intent(PerfilActivity.this, TrocarSenhaActivity.class);
+            startActivity(in);
+
+        });
+
+        Button deslogar = findViewById(R.id.btnConfirmar);
+        deslogar.setOnClickListener(view -> {
+
+            UsuarioControler controler = new UsuarioControler();
+            controler.logout();
+            Intent logout = new Intent(PerfilActivity.this, LoginActivity.class);
+            startActivity(logout);
+            finish();
+
+
+        });
 
         reference.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -53,6 +82,8 @@ public class PerfilActivity extends AppCompatActivity {
                 startActivity(retorno);
             }
         });
+
+
 
     }
 }

@@ -12,15 +12,15 @@
 
 
     <Button
-        android:id="@+id/logarId"
-        android:layout_width="161dp"
-        android:layout_height="59dp"
+        android:id="@+id/btnConfirmar"
+        android:layout_width="166dp"
+        android:layout_height="63dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="308dp"
         android:backgroundTint="#792EE4"
         android:fadingEdge="horizontal"
-        android:onClick="logarId"
-        android:text="Logar"
+        android:onClick="trocarSenha"
+        android:text="Confirmar"
         android:textAlignment="center"
         app:cornerRadius="10dp"
         app:layout_constraintStart_toEndOf="@id/componentes"
@@ -33,56 +33,43 @@
         android:id="@+id/componentes"
         style="@style/ContainerComponents"
         android:layout_width="312dp"
-        android:layout_height="416dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="389dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="118dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoCadastro">
+        app:layout_constraintTop_toBottomOf="@id/logoCadastro"
+        app:layout_constraintVertical_bias="0.512">
 
 
     </View>
 
-
-    <TextView
-        android:id="@+id/cadastrarId"
-        android:layout_width="228dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="350dp"
-        android:onClick="cadastrarId"
-        android:text="Ainda não possui conta? Clique aqui"
-        android:textAlignment="center"
-        android:textColor="#874AE0"
-        app:layout_constraintStart_toEndOf="@id/componentes"
-        app:layout_constraintStart_toStartOf="@id/componentes"
-        app:layout_constraintTop_toTopOf="@id/componentes" />
-
     <EditText
-        android:id="@+id/senhaId"
+        android:id="@+id/idEmailFinal"
         style="@style/Edit_Text"
-        android:layout_width="266dp"
-        android:layout_height="60dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="140dp"
-        android:drawableStart="@drawable/ic_baseline_password_24"
+        android:layout_marginTop="104dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:ems="10"
-        android:hint="Digite sua Senha:"
-        android:inputType="textPassword"
+        android:hint="Digite seu email:"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@id/componentes"
         app:layout_constraintStart_toStartOf="@id/componentes"
         app:layout_constraintTop_toTopOf="@id/componentes" />
 
     <EditText
-        android:id="@+id/emailId"
+        android:id="@+id/idEmailInicial"
         style="@style/Edit_Text"
         android:layout_width="268dp"
         android:layout_height="54dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="196dp"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:ems="10"
-        android:hint="Digite seu Email:"
+        android:hint="Confirme seu email:"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@id/componentes"
         app:layout_constraintStart_toStartOf="@id/componentes"
@@ -95,9 +82,23 @@
         android:layout_marginStart="107dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="125dp"
+        android:tint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="227dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="296dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:text="Trocar Email"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
