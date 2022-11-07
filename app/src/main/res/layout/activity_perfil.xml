@@ -2,91 +2,138 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idEnviar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#020101"
-    android:backgroundTint="#FFFFFF"
-    android:backgroundTintMode="add"
-    android:textAlignment="center"
-    tools:context=".view.PerfilActivity">
+    android:background="@drawable/background"
+    android:foregroundTint="#EDEDED"
+    android:layerType="hardware"
+    tools:context=".view.CadastrarActivity">
 
-    <TextView
-        android:id="@+id/idRetornoEmail"
-        android:layout_width="262dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="233dp"
-        android:textAlignment="viewStart"
-        android:textColor="#6200ED"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="177dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="364dp"
+        android:backgroundTint="#792EE4"
+        android:fadingEdge="horizontal"
+        android:onClick="trocarSenha"
+        android:text="Deslogar"
+        android:textAlignment="center"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes"
+        app:layout_constraintTop_toTopOf="@id/componentes"
+        app:strokeColor="#000000" />
+
+
+    <Button
+        android:id="@+id/btnTrocarEmail"
+        android:layout_width="177dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="256dp"
+        android:backgroundTint="#792EE4"
+        android:fadingEdge="horizontal"
+        android:onClick="trocarEmail"
+        android:text="Alterar Email"
+        android:textAlignment="center"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes"
+        app:layout_constraintTop_toTopOf="@id/componentes"
+        app:strokeColor="#000000" />
+
+    <Button
+        android:id="@+id/btnTrocarSenha"
+        android:layout_width="177dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="308dp"
+        android:backgroundTint="#792EE4"
+        android:fadingEdge="horizontal"
+        android:onClick="trocarSenha"
+        android:text="Alterar Senha"
+        android:textAlignment="center"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes"
+        app:layout_constraintTop_toTopOf="@id/componentes"
+        app:strokeColor="#000000" />
+
+    <View
+
+        android:id="@+id/componentes"
+        style="@style/ContainerComponents"
+        android:layout_width="331dp"
+        android:layout_height="422dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@id/logoCadastro">
 
-    <TextView
-        android:id="@+id/idRetornoNome"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="4dp"
-        android:textAlignment="viewStart"
-        android:textColor="#6200ED"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="336dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="25dp"
-        android:background="#FFFFFF"
-        android:text="Usuário"
-        android:textColor="#6200ED"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/idRetornoNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    </View>
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="337dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        android:text="Email:"
-        android:textColor="#6200ED"
-        android:textSize="20sp"
-        app:drawableTint="#FEFEFE"
-        app:layout_constraintBottom_toTopOf="@+id/idRetornoEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idRetornoNome" />
+    <EditText
+        android:id="@+id/idEmailFinal"
+        style="@style/Edit_Text"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="84dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes"
+        app:layout_constraintTop_toTopOf="@id/componentes"
+
+
+        />
+
+    <EditText
+        android:id="@+id/idEmailInicial"
+        style="@style/Edit_Text"
+        android:layout_width="268dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="176dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes"
+        app:layout_constraintTop_toTopOf="@id/componentes" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="154dp"
-        android:layout_height="135dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="51dp"
-        android:background="#FEFEFE"
-        android:tint="#6200EC"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        android:id="@+id/logoCadastro"
+        android:layout_width="179dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="125dp"
+        android:tint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:text="Perfil"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/idEmailFinal"
+        app:layout_constraintStart_toEndOf="@id/componentes"
+        app:layout_constraintStart_toStartOf="@id/componentes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

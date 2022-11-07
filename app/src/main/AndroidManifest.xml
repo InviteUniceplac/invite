@@ -20,8 +20,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Invite"
         tools:targetApi="31">
-
-        <!-- SERVICES -->
+        <activity
+            android:name=".view.TrocarEmailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.TrocarSenhaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- SERVICES -->
         <service
             android:name=".services.QrCodeService"
             android:enabled="true"
@@ -37,9 +49,7 @@
         <service
             android:name=".services.PermissaoService"
             android:enabled="true"
-            android:exported="true" />
-
-        <!-- ACTIVITIES -->
+            android:exported="true" /> <!-- ACTIVITIES -->
         <!-- HOME -->
         <activity
             android:name=".view.HomeActivity"
@@ -47,67 +57,55 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
-        </activity>
-
-        <!-- CADASTRO -->
+        </activity> <!-- CADASTRO -->
         <activity
             android:name=".view.CadastrarActivity"
-            android:exported="true" />
-
-        <!-- LOGIN -->
+            android:exported="true" /> <!-- LOGIN -->
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- EVENTOS -->
+        </activity> <!-- EVENTOS -->
         <activity
             android:name=".view.EventosActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- PERFIL -->
+        </activity> <!-- PERFIL -->
         <activity
             android:name=".view.PerfilActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- GERAR CONVITE -->
+        </activity> <!-- GERAR CONVITE -->
         <activity
             android:name=".view.GerarConviteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- CONVITE -->
+        </activity> <!-- CONVITE -->
         <activity
             android:name=".view.ConviteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- COMPROVANTE -->
+        </activity> <!-- COMPROVANTE -->
         <activity
             android:name=".view.ComprovanteActivity"
             android:exported="false">
@@ -116,4 +114,5 @@
                 android:value="" />
         </activity>
     </application>
+
 </manifest>
