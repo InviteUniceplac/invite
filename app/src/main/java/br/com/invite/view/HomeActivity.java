@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import br.com.invite.R;
 import br.com.invite.controller.UsuarioControler;
@@ -26,13 +27,11 @@ import br.com.invite.model.Evento;
 import br.com.invite.model.MyAdapter;
 
 public class HomeActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference("Eventos");
+    private final FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private final DatabaseReference root = db.getReference("Eventos");
     private MyAdapter adapter;
 
-    private ArrayList list;
+    private ArrayList<Evento> list;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,53 +47,16 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         preparaBotoesMenuInferior();
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        list = new ArrayList<>();
-        adapter = new MyAdapter(this, list);
-
-        recyclerView.setAdapter(adapter);
-
-        root.addValueEventListener(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Evento evento = dataSnapshot.getValue(Evento.class);
-                    list.add(evento);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(HomeActivity.this, GerarConviteActivity.class);
-                startActivity(in);
-            }
-        });
-
+        preparaAdapter();
     }
 
     private void preparaBotoesMenuInferior() {
-
         View eventosBtn = findViewById(R.id.btn_eventos);
-        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")){
 
+        if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")) {
             eventosBtn.setVisibility(View.VISIBLE);
-
-        }else{
-
+        } else {
             eventosBtn.setVisibility(View.GONE);
-
         }
 
         View perfilBtn = findViewById(R.id.btn_perfil);
@@ -118,6 +80,40 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(logout);
             finish();
         });
+    }
 
+    private void preparaAdapter() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        adapter = new MyAdapter(this, list);
+
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        inflarItens();
+    }
+
+    private void inflarItens() {
+        root.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Evento evento = dataSnapshot.getValue(Evento.class);
+                    list.add(evento);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 }

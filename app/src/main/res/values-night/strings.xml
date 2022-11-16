@@ -10,9 +10,10 @@
     <string name="qr_code">QR-Code</string>
     <string name="comprovante">Comprovante</string>
 
-    <!--  -->
+    <!-- ALERTAS -->
     <string name="inserir_cpf">Insira seu CPF</string>
     <string name="gerar_qrcode">Gerar QR-Code</string>
+    <string name="gerar_convite">Gerar Convite</string>
 
     <!-- INFORMATIVOS -->
     <string name="inf_gera_convite">Gerando convite</string>
@@ -25,4 +26,10 @@
     <string name="descricao_logo">Logo</string>
     <string name="descricao_fab_add">ADD</string>
     <string name="inf_erro_gera_convite">Problema ao tentar gerar o Qr-Code</string>
+
+    <!-- ITENS EVENTO -->
+    <string name="nome_do_evento">Nome do Evento:</string>
+    <string name="data_do_evento">Data:</string>
+    <string name="hora_do_evento">Hora:</string>
+    <string name="local_do_evento">Local do Evento:</string>
 </resources>

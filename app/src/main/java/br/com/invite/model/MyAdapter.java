@@ -2,16 +2,15 @@ package br.com.invite.model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,77 +19,64 @@ import java.util.Locale;
 
 import br.com.invite.R;
 import br.com.invite.view.GerarConviteActivity;
-import br.com.invite.view.HomeActivity;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private final Bundle _dados = new Bundle();
 
-
-    ArrayList<Evento> mList;
+    ArrayList<Evento> eventos;
     Context context;
 
-    public MyAdapter(Context context, ArrayList<Evento> mList){
-        this.mList =  mList;
+    public MyAdapter(Context context, ArrayList<Evento> list) {
+        this.eventos = list;
         this.context = context;
-
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
         return new MyViewHolder(v);
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Evento evento = mList.get(position);
+        Evento evento = eventos.get(position);
 
-        final DateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy 'ás' HH:mm", Locale.ENGLISH);
+        final DateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        final DateFormat formatadorHora = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
 
-        holder.nomeEvento.setText(evento.getNomeEvento());
-        holder.local.setText(evento.getLocal());
-        holder.patrocinador.setText(evento.getPatrocinador());
+        holder.nome.setText(evento.getNomeEvento());
         holder.data.setText(formatadorData.format(evento.getData()));
-        holder.descricao.setText(evento.getDescricao());
+        holder.horario.setText(formatadorHora.format(evento.getData()));
+        holder.local.setText(evento.getLocal());
 
+        holder.btnGerarConvite.setOnClickListener(v -> {
+            _dados.putSerializable("EVENTO", evento);
+
+            Intent intent = new Intent(context, GerarConviteActivity.class);
+            intent.putExtras(_dados);
+            context.startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return eventos.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView local, nomeEvento, data, patrocinador, descricao;
-        Button btGerar;
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView nome, data, horario, local;
+        Button btnGerarConvite;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
-
-            local = itemView.findViewById(R.id.local_text);
-            nomeEvento = itemView.findViewById(R.id.nomeEvento_text);
-            data = itemView.findViewById(R.id.data_text);
-            patrocinador = itemView.findViewById(R.id.patrocidador_text);
-            descricao = itemView.findViewById(R.id.descricao_text);
-
-            itemView.findViewById(R.id.btGerarComprovante).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Intent in = new Intent(context, GerarConviteActivity.class);
-                    itemView.getContext().startActivity(in);
-
-                }
-            });
-
+            nome = itemView.findViewById(R.id.txt_nomeEvento);
+            data = itemView.findViewById(R.id.txt_data);
+            horario = itemView.findViewById(R.id.txt_horario);
+            local = itemView.findViewById(R.id.txt_local);
+            btnGerarConvite = itemView.findViewById(R.id.btn_gerar_convite);
         }
-
-
     }
 }
 

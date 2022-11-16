@@ -26,8 +26,7 @@ public class ConviteActivity extends AppCompatActivity {
     private final ConviteService _conviteService = new ConviteService();
     private final PermissaoService _permissaoService = new PermissaoService();
 
-    private final DateFormat formatadorData = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-    private final DateFormat formatadorHora = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
+    private final DateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy 'as' HH:mm", Locale.ENGLISH);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +42,17 @@ public class ConviteActivity extends AppCompatActivity {
         Bundle _dados = getIntent().getExtras();
 
         TextView tv_nome = findViewById(R.id.tv_nome);
+        TextView tv_evento = findViewById(R.id.tv_evento);
         TextView tv_data = findViewById(R.id.tv_data);
-        TextView tv_horario = findViewById(R.id.tv_horario);
         TextView tv_local = findViewById(R.id.tv_local);
 
         ImageView qrCode = findViewById(R.id.iv_convite);
 
         Convite convite = (Convite) _dados.getSerializable("CONVITE");
 
-        tv_nome.setText(String.format("Nome: %s", convite.getUsuario().getNome()));
-        tv_data.setText(String.format("Data: %s", formatadorData.format(convite.getEvento().getData())));
-        tv_horario.setText(String.format("Horário: %s", formatadorHora.format(convite.getEvento().getData())));
+        tv_nome.setText(convite.getUsuario().getNome().toUpperCase());
+        tv_evento.setText(String.format("Evento: %s", convite.getEvento().getNomeEvento()));
+        tv_data.setText(String.format("Dia: %s", formatadorData.format(convite.getEvento().getData())));
         tv_local.setText(String.format("Local: %s", convite.getEvento().getLocal()));
 
         _qrCodeService.mostrarQrCode(_dados.getString("CONVITE_BANCO"), this, qrCode, 450);

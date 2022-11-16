@@ -15,7 +15,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Date;
 import java.util.Objects;
 
 import br.com.invite.R;
@@ -27,10 +26,8 @@ import br.com.invite.services.ConviteService;
 public class GerarConviteActivity extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private final ConviteService _conviteService = new ConviteService();
-    private final Bundle _dados = new Bundle();
+    private Bundle _dados;
 
-    Evento evento = null;
-    Usuario usuario = null;
     Convite convite = null;
 
     @Override
@@ -38,9 +35,9 @@ public class GerarConviteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gerar_convite);
 
-        receberUsuarioFirebase();
+        _dados = getIntent().getExtras();
 
-        evento = new Evento("Local", "NomeEvento", new Date(), "Patrocinador", "Descricao");
+        receberUsuarioFirebase();
     }
 
     public void receberUsuarioFirebase() {
@@ -52,7 +49,7 @@ public class GerarConviteActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 usuarioFirebase = dataSnapshot.child(user.getUid()).getValue(Usuario.class);
-                usuario = usuarioFirebase;
+                _dados.putSerializable("USUARIO", usuarioFirebase);
 
                 gerarConvite();
             }
@@ -65,10 +62,6 @@ public class GerarConviteActivity extends AppCompatActivity {
     }
 
     public void gerarConvite() {
-        // Esses dados vão sumir com a integração das telas (virão a partir do Bundle)
-        _dados.putSerializable("EVENTO", evento);
-        _dados.putSerializable("USUARIO", usuario);
-
         convite = new Convite((Evento) _dados.getSerializable("EVENTO"), (Usuario) _dados.getSerializable("USUARIO"));
 
         // Persistir convite
