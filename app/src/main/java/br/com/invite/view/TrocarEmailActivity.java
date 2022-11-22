@@ -1,11 +1,11 @@
 package br.com.invite.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -15,9 +15,6 @@ import br.com.invite.R;
 
 
 public class TrocarEmailActivity extends AppCompatActivity {
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +31,10 @@ public class TrocarEmailActivity extends AppCompatActivity {
         String confirmaEmail = txtConfirmaEmail.getText().toString();
 
         Button btnEmail = findViewById(R.id.btnConfirmar);
-        btnEmail.setOnClickListener(view ->{
+        btnEmail.setOnClickListener(view -> {
             Intent in = new Intent(TrocarEmailActivity.this, PerfilActivity.class);
             startActivity(in);
             finish();
-
 
 //            if(email.equals(confirmaEmail)){
 //
@@ -79,7 +75,6 @@ public class TrocarEmailActivity extends AppCompatActivity {
 //                Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
 //
 //            }
-
         });
     }
 }

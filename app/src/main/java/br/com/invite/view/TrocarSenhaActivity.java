@@ -1,29 +1,20 @@
 package br.com.invite.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import br.com.invite.R;
-import br.com.invite.model.Usuario;
 
 
 public class TrocarSenhaActivity extends AppCompatActivity {
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +31,10 @@ public class TrocarSenhaActivity extends AppCompatActivity {
         String confirmaSenha = txtConfirmaSenha.getText().toString();
 
         Button btnSenha = findViewById(R.id.btnConfirmar);
-        btnSenha.setOnClickListener(view ->{
-        Intent in = new Intent(TrocarSenhaActivity.this, PerfilActivity.class);
-        startActivity(in);
-        finish();
-
-
+        btnSenha.setOnClickListener(view -> {
+            Intent in = new Intent(TrocarSenhaActivity.this, PerfilActivity.class);
+            startActivity(in);
+            finish();
 
 //            if(senha.equals(confirmaSenha)){
 //
@@ -81,8 +70,6 @@ public class TrocarSenhaActivity extends AppCompatActivity {
 //            Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
 //
 //            }
-
         });
-
     }
 }

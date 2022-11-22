@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import br.com.invite.R;
-import br.com.invite.view.GerarConviteActivity;
+import br.com.invite.view.DetalhesEventoActivity;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private final Bundle _dados = new Bundle();
@@ -53,7 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.btnGerarConvite.setOnClickListener(v -> {
             _dados.putSerializable("EVENTO", evento);
 
-            Intent intent = new Intent(context, GerarConviteActivity.class);
+            Intent intent = new Intent(context, DetalhesEventoActivity.class);
             intent.putExtras(_dados);
             context.startActivity(intent);
         });

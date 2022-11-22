@@ -46,8 +46,19 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        preparaBotoesMenuInferior();
         preparaAdapter();
+        preparaBotoesMenuInferior();
+    }
+
+    private void preparaAdapter() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        adapter = new MyAdapter(this, list);
+
+        recyclerView.setAdapter(adapter);
     }
 
     private void preparaBotoesMenuInferior() {
@@ -80,17 +91,6 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(logout);
             finish();
         });
-    }
-
-    private void preparaAdapter() {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        list = new ArrayList<>();
-        adapter = new MyAdapter(this, list);
-
-        recyclerView.setAdapter(adapter);
     }
 
     @Override

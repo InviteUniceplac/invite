@@ -5,6 +5,8 @@
     <!-- FUNCIONALIDADES -->
     <string name="login">Login</string>
     <string name="convite">Convite</string>
+    <string name="eventos">Eventos</string>
+    <string name="detalhes_evento">Detalhes do evento</string>
     <string name="comprovante_participacao">Comprovante de participação</string>
     <string name="cadastro">Cadastro</string>
     <string name="qr_code">QR-Code</string>

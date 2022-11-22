@@ -8,7 +8,7 @@
     app:cardElevation="8dp">
 
     <LinearLayout
-        android:id="@+id/btComprovante"
+        android:id="@+id/card_evento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
