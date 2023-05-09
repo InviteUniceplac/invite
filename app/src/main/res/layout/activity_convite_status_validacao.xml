@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".view.ConviteStatusValidacao">
 
+    <ImageView
+        android:id="@+id/imagemStatusValidacao"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="Imagem dinâmica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/done" />
+
+    <TextView
+        android:id="@+id/messagemValidacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="83dp"
+        android:text="Validado com sucesso"
+        android:textColor="@color/green_success"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemStatusValidacao" />
 </androidx.constraintlayout.widget.ConstraintLayout>
