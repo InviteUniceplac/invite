@@ -11,5 +11,8 @@
     <color name="purple">#782BE6</color>
     <color name="medium_purple">#FF9058DF</color>
     <color name="light_purple">#F8CEEC</color>
+    <color name="red_failed">#8c1717</color>
+
+    <color name="green_success">#217c13</color>
 
 </resources>
