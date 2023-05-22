@@ -12,10 +12,12 @@ import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
 import android.os.IBinder;
+import android.widget.ExpandableListAdapter;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,6 +28,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import br.com.invite.R;
 import br.com.invite.model.Convite;
@@ -101,5 +104,21 @@ public class ConviteService extends Service {
         }
 
         pdf.close();
+    }
+
+    public AtomicInteger procurarConvite(String uid) {
+        AtomicInteger status = new AtomicInteger(200);
+        try {
+            conviteReference.child(uid).get().addOnCompleteListener(task -> {
+                if (!task.isSuccessful())
+                    status.set(503);
+            });
+        } catch (DatabaseException e) {
+            status.set(404);
+        } catch (Exception e) {
+            status.set(500);
+        }
+
+        return status;
     }
 }
