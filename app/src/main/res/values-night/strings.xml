@@ -2,6 +2,13 @@
 <resources>
     <string name="app_name">Invite</string>
 
+    <!--  MENU  -->
+    android:title="@string/menu_scanner" />
+    <string name="menu_scanner">Scanner</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_eventos">Eventos</string>
+    <string name="menu_perfil">Eventos</string>
+
     <!-- FUNCIONALIDADES -->
     <string name="login">Login</string>
     <string name="convite">Convite</string>
@@ -16,6 +23,14 @@
     <string name="inserir_cpf">Insira seu CPF</string>
     <string name="gerar_qrcode">Gerar QR-Code</string>
     <string name="gerar_convite">Gerar Convite</string>
+    <string name="validar_convite">Validar Convite</string>
+    <string name="progresso_convite">Validando</string>
+    <string name="cancelado">Validação cancelada</string>
+    <string name="cancelado_permissao">Validação cancelada pela falta de permissão</string>
+    <string name="qr_invalido">QR Code inválido</string>
+    <string name="convite_valido">Convite confirmado!</string>
+    <string name="convite_invalido">Convite não existe!</string>
+    <string name="problema_servidor">Convite não validado por problemas internos!</string>
 
     <!-- INFORMATIVOS -->
     <string name="inf_gera_convite">Gerando convite</string>
@@ -34,4 +49,6 @@
     <string name="data_do_evento">Data:</string>
     <string name="hora_do_evento">Hora:</string>
     <string name="local_do_evento">Local do Evento:</string>
+    <string name="turn_on_flashlight">FLASH</string>
+    <string name="flash">Flash</string>
 </resources>
