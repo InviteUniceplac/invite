@@ -4,19 +4,27 @@
         android:id="@+id/btn_eventos"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_add_24"
-        android:title="Eventos"
-        />
+        android:title="@string/menu_eventos" /> />
+
     <item
         android:id="@+id/btn_perfil"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
         android:src="@drawable/ic_baseline_add_24"
-        android:title="Perfil" />
+        android:title="@string/menu_perfil" />
+
     <item
         android:id="@+id/btn_logout"
         android:enabled="true"
         android:icon="@drawable/common_full_open_on_phone"
         android:src="@drawable/logo"
-        android:title="Logout" />
+        android:title="@string/menu_logout" />
+
+    <item
+        android:id="@+id/btn_scanner"
+        android:enabled="true"
+        android:icon="@drawable/baseline_qr_code_scanner_24"
+        android:src="@drawable/logo"
+        android:title="@string/menu_scanner" />
 
 </menu>

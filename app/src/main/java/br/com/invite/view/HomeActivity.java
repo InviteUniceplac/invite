@@ -23,6 +23,7 @@ import java.util.Objects;
 
 import br.com.invite.R;
 import br.com.invite.controller.UsuarioControler;
+import br.com.invite.model.Convite;
 import br.com.invite.model.Evento;
 import br.com.invite.model.MyAdapter;
 
@@ -63,11 +64,11 @@ public class HomeActivity extends AppCompatActivity {
 
     private void preparaBotoesMenuInferior() {
         View eventosBtn = findViewById(R.id.btn_eventos);
+        View scannerBtn = findViewById(R.id.btn_scanner);
 
-        if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals("KgRVqmbx6pQmBmi68PoGc8wcPof1")) {
+        if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals("HPOIeOTzF1Ol25LSyASnjM3zE4l2")) {
             eventosBtn.setVisibility(View.VISIBLE);
-        } else {
-            eventosBtn.setVisibility(View.GONE);
+            scannerBtn.setVisibility(View.VISIBLE);
         }
 
         View perfilBtn = findViewById(R.id.btn_perfil);
@@ -90,6 +91,11 @@ public class HomeActivity extends AppCompatActivity {
 
             startActivity(logout);
             finish();
+        });
+
+        scannerBtn.setOnClickListener(view -> {
+            Intent scanner = new Intent(HomeActivity.this, ConviteStatusValidacao.class);
+            startActivity(scanner);
         });
     }
 
