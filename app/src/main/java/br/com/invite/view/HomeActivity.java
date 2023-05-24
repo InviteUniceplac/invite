@@ -63,13 +63,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void preparaBotoesMenuInferior() {
+        int visibility = View.GONE;
         View eventosBtn = findViewById(R.id.btn_eventos);
         View scannerBtn = findViewById(R.id.btn_scanner);
 
         if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals("HPOIeOTzF1Ol25LSyASnjM3zE4l2")) {
-            eventosBtn.setVisibility(View.VISIBLE);
-            scannerBtn.setVisibility(View.VISIBLE);
+            visibility =  View.VISIBLE;
         }
+
+        eventosBtn.setVisibility(visibility);
+        scannerBtn.setVisibility(visibility);
 
         View perfilBtn = findViewById(R.id.btn_perfil);
         View logoutBtn = findViewById(R.id.btn_logout);
